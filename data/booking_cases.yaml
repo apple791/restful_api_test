@@ -1,0 +1,23 @@
+base_booking:
+  firstname: Practice
+  lastname: Learner
+  totalprice: 120
+  depositpaid: true
+  bookingdates:
+    checkin: '2027-01-10'
+    checkout: '2027-01-12'
+  additionalneeds: Breakfast
+
+create_cases:
+  - case_name: paid_booking
+    overrides: {totalprice: 120, depositpaid: true}
+  - case_name: unpaid_booking
+    overrides: {totalprice: 250, depositpaid: false}
+  - case_name: zero_price_booking
+    overrides: {totalprice: 0, depositpaid: false}
+
+unauthorized_cases:
+  - case_name: missing_token
+    token: null
+  - case_name: invalid_token
+    token: invalid-practice-token
